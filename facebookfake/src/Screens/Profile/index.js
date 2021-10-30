@@ -1,11 +1,33 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable keyword-spacing */
+/* eslint-disable no-alert */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
+
 import React, {useEffect, useRef, useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView, PermissionsAndroid} from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './styles';
+
+const requestCameraPermission = async () => {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.CAMERA,
+      {
+        title:'Permissão para uso de Câmera',
+        message:'O App precisa de acesso à Câmera.',
+        buttonNeutral:'Pergunte-me depois',
+        buttonNegative:'Cancelar',
+        buttonPositive:'Ok',
+      }
+    );
+    if(granted === PermissionsAndroid.RESULTS.GRANTED){
+      alert('Você pode usar a Câmera');
+    } else{
+      alert('Permissão de Câmera Negada..');
+    }
+  };
 
 const Profile = () => {
   const camera = useRef();
@@ -14,13 +36,13 @@ const Profile = () => {
 
   useEffect(() => {
     AsyncStorage.getItem('foto_perfil').then(img => {
-      /*
+
         if(img){
           setNewImage(img);
         }
-      */
 
-      // setNewImage(img ? img : '')
+
+      setNewImage(img ? img : '');
       setNewImage(img || '');
     });
   }, []);

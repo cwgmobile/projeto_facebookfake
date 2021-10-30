@@ -2,8 +2,10 @@
 /* eslint-disable quotes */
 /* eslint-disable jsx-quotes */
 /* eslint-disable prettier/prettier */
-import React from 'react';
+
+import React,{useContext, useState} from 'react';
 import {Text, View, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native';
+import axios from 'axios';
 import AuthContext from '../../contexts/auth';
 import Lottie from 'lottie-react-native';
 import logoFace from '../../assets/logoFAce.json';
@@ -17,7 +19,7 @@ const Login = () => {
 
 const [email, setEmail] = useState('eve.holt@reqres.in');
 const [senha, setSenha] = useState('cityslicka');
-const {signIn} = useContext(AuthContext); 
+const {signIn} = useContext(AuthContext);
 
 
 const entrar = () => {

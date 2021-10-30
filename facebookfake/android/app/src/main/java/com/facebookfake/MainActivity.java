@@ -1,5 +1,4 @@
 package com.facebookfake;
-
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
 
