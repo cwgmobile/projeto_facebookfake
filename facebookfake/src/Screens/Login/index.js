@@ -2,7 +2,7 @@
 /* eslint-disable quotes */
 /* eslint-disable jsx-quotes */
 /* eslint-disable prettier/prettier */
-
+import 'react-native-gesture-handler';
 import React,{useContext, useState} from 'react';
 import {Text, View, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native';
 import axios from 'axios';
@@ -45,7 +45,7 @@ return (
                 <View style={styles.input}>
                     <Input
                          value={email}
-                         onChangeText={v => setEmail(v)}
+                         onChangeText={v => setEmail('eve.holt@reqres.in')}
                          keyboardType="email-address"
 
                          />
@@ -53,7 +53,7 @@ return (
                 <View style={styles.input}>
                     <Input
                         value={senha}
-                        onChangeText={v => setSenha(v)}
+                        onChangeText={v => setSenha('cityslika')}
                         secureTextEntry
 
                     />

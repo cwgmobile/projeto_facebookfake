@@ -1,16 +1,20 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Pressable, Text} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import styles from './styles';
+import {AuthContext} from '../../contexts/auth';
 
 
 
 const Stack = createNativeStackNavigator();
 
 const Home = ({navigation}) => {
+
+  const {signOut} = useContext(AuthContext);
+
   return (
   <>
     <View style={styles.pageHome}>
@@ -62,6 +66,18 @@ const Home = ({navigation}) => {
         <Text style= {{color:'#fff', textAlign:'center', fontSize: 20, marginVertical: 5}}>Ir para o Login</Text>
       </Pressable>
     </View>
+      <View>
+          <Pressable
+            style={{
+              backgroundColor: 'lightblue',
+              width: 150,
+              height: 30,
+              margin: 30,
+            }}
+            onPress={() => signOut()}>
+            <Text>Deslogar</Text>
+          </Pressable>
+        </View>
   </>
   );
 };
