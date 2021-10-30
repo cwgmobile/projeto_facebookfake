@@ -4,6 +4,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {Text, View, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native';
+import AuthContext from '../../contexts/auth';
 import Lottie from 'lottie-react-native';
 import logoFace from '../../assets/logoFAce.json';
 import { Input } from "react-native-elements";
@@ -14,6 +15,25 @@ const size = Dimensions.get('window').width * 0.4;
 
 const Login = () => {
 
+const [email, setEmail] = useState('eve.holt@reqres.in');
+const [senha, setSenha] = useState('cityslicka');
+const {signIn} = useContext(AuthContext); 
+
+
+const entrar = () => {
+    axios
+      .post('https://reqres.in/api/login', {
+        email: email,
+        password: senha,
+      })
+      .then(res => {
+        signIn(res.data.token);
+      })
+      .catch(() => {
+        Alert.alert('Email ou Senha incorretos');
+      });
+  };
+
 return (
         <>
         <SafeAreaView style={styles.container}>
@@ -22,16 +42,22 @@ return (
             </SafeAreaView>
                 <View style={styles.input}>
                     <Input
-                        label="Digite seu E-mail:"
-                        placeholder="Seu E-mail"/>
+                         value={email}
+                         onChangeText={v => setEmail(v)}
+                         keyboardType="email-address"
+
+                         />
                 </View>
                 <View style={styles.input}>
                     <Input
-                        label="Digite sua Senha:"
-                        placeholder="Sua Senha"/>
+                        value={senha}
+                        onChangeText={v => setSenha(v)}
+                        secureTextEntry
+
+                    />
                 </View>
                 <View style={styles.button}>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => entrar()}>
                         <Text style = {{color:'#fff'}} >ENTRAR </Text>
                     </TouchableOpacity>
                 </View>
