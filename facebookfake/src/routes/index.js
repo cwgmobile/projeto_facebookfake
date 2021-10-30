@@ -2,7 +2,6 @@
 import React, {useContext} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplashScreen from '../screens/SplashScreen';
-import Login from '../Screens/Login';
 import Home from '../Screens/Home';
 import Posts from '../screens/Posts';
 import Profile from '../screens/Profile';
@@ -25,7 +24,6 @@ const Routes = () => {
     <AppStack.Navigator initialRouteName="SplashScreen">
             <AppStack.Screen name="SplashScreen" component={SplashScreen} />
             <AppStack.Screen name="Home" component={Home} />
-            <AppStack.Screen name="Login" component={Login} />
             <AppStack.Screen name="Profile" component={Profile} />
             <AppStack.Screen name="Posts" component={Posts} />
             <AppStack.Screen name="Blog" component={Blog} />
