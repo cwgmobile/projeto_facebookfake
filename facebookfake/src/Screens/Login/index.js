@@ -16,8 +16,8 @@ const size = Dimensions.get('window').width * 0.4;
 
 const Login = () => {
 
-const [email, setEmail] = useState('eve.holt@reqres.in');
-const [senha, setSenha] = useState('cityslicka');
+const [email, setEmail] = useState('');
+const [senha, setSenha] = useState('');
 const {signIn} = useContext(AuthContext);
 
 
