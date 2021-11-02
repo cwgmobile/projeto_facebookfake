@@ -41,15 +41,19 @@ return (
                 <Lottie autoSize source={logoFace} style={{width: size, height: size}}
                     autoPlay loop resizeMode = 'contain' />
         </SafeAreaView>
+                  <Text style={styles.text}>Email</Text>
                 <View style={styles.input}>
                     <TextInput
+                         style={styles.textInput}
                          value={email}
                          onChangeText={v => setEmail(v)}
                          keyboardType="email-address"
-                         />
+                    />
                 </View>
+                  <Text style={styles.text}>Senha</Text>
                 <View style={styles.input}>
                     <TextInput
+                        style={styles.textInput}
                         value={senha}
                         onChangeText={v => setSenha(v)}
                         secureTextEntry
@@ -58,11 +62,11 @@ return (
                 </View>
                 <View style={styles.button}>
                     <Pressable onPress={() => entrar()}>
-                        <Text style = {{color:'#fff', fontWeight:'bold'}} >ENTRAR </Text>
-                  </Pressable>
-            </View>
-          </>
-          );
-      };
+                        <Text style = {{color:'#fff', fontWeight:'bold'}} > ENTRAR </Text>
+                </Pressable>
+          </View>
+      </>
+    );
+  };
 
     export default Login;

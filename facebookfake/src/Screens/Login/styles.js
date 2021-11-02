@@ -7,7 +7,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 80,
-    marginBottom: 50,
+    marginBottom: 40,
     marginHorizontal: 20,
 
   },
@@ -16,10 +16,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor:'#E0ECF8',
-    border: 1,
+    borderWidth: 1,
     borderRadius: 10,
     borderColor: '#BDBDBD',
-    marginVertical: 10,
+    marginVertical: 5,
     marginHorizontal: 20,
 
   },
@@ -31,7 +31,16 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginVertical: 25,
     marginHorizontal: 20,
+    marginBottom: 50,
 
+  },
+  text: {
+    fontSize: 18,
+    marginLeft: 20,
+  },
+   textInput: {
+    fontSize: 18,
+    marginLeft: 20,
   },
 
 });

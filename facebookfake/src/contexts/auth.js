@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 /**
  * Criação do contexto com valor pré-definido
  */
- const AuthContext = createContext({signed: true});
+ const AuthContext = createContext({signed: false}); //inicia o app Logado => true
 
 /**
  * Criação do Provider para ser utilizado em toda a aplicação
@@ -14,7 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
  * são os componentes que vão dentro do <AuthProvider />,
  * que está declarado no App.js
  */
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({children}) => {    // children é tudo que tem dentro do AuthProvider
   const [signed, setSigned] = useState(true);
 
   /**

@@ -2,11 +2,11 @@
 /* eslint-disable prettier/prettier */
 
 import React, {useContext} from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import { Icon } from 'react-native-vector-icons/MaterialIcons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//import { Icon } from 'react-native-vector-icons/MaterialIcons';
+
 import SplashScreen from '../Screens/SplashScreen';
 import Login from '../Screens/Login';
-import StackRoutes from './stackRoutes';
 import Posts from '../Screens/Posts';
 import Profile from '../Screens/Profile';
 import Blog from '../Screens/Blog';
@@ -16,7 +16,8 @@ import AuthRoutes from './authroutes';
 import AuthContext from '../contexts/auth';
 import Home from '../Screens/Home';
 
-const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
+
 
 const Routes = () => {
 
@@ -25,36 +26,18 @@ const Routes = () => {
  if (!signed) {
    return <AuthRoutes />;
   } else {
+
     return (
-    <Drawer.Navigator
-    screenOptions={{
-      drawerStyle:{
-        backgroundColor:'#E6E6E6',
-        paddingTop:20,
-      },
-      drawerActiveBackgroundColor:'#0f69ad',
-      drawerActiveTintColor:'#fff',
-      drawerInactiveTintColor:'#0f69ad',
-    }}
-    initialRouteName="SplashScreen"
-    >
-            <Drawer.Screen name="SplashScreen" screenOptions={{headerShown: false}} component={SplashScreen} />
-            <Drawer.Screen name="Login" screenOptions={{headerShown: false}} component={Login} />
-            <Drawer.Screen name="HomeDrawer" 
-            screenOptions={{headerShown: false}} 
-            component={StackRoutes} 
-              options={{
-                title:'Início',
-                drawerIcon:({focused, size, color}) => ( <Icon name={ focused ? 'Home' : 'home-outline' } size={size} color={color} />),
-            }}
-          />
-            <Drawer.Screen name="Home" component={Home} />
-            <Drawer.Screen name="Blog" component={Blog} />
-            <Drawer.Screen name="Posts" component={Posts} />
-            <Drawer.Screen name="Profile" component={Profile} />
-            <Drawer.Screen name="PostList" component={PostList} />
-            <Drawer.Screen name="PostDetails" component={PostsDetails} />
-    </Drawer.Navigator>
+    <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{headerShown: false}}>
+            <Stack.Screen name="SplashScreen" component={SplashScreen} />
+            <Stack.Screen name="Login"  component={Login}/>
+            <Stack.Screen name="Home"  component={Home} />
+            <Stack.Screen name="Blog" component={Blog} />
+            <Stack.Screen name="Posts"  component={Posts} />
+            <Stack.Screen name="Profile"  component={Profile} />
+            <Stack.Screen name="PostList"  component={PostList} />
+            <Stack.Screen name="PostDetails"  component={PostsDetails} />
+    </Stack.Navigator>
     );
   }
 };
