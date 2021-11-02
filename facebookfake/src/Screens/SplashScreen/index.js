@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-quotes */
@@ -8,19 +9,23 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Lottie from 'lottie-react-native';
 import logoFace from '../../assets/logoFAce.json';
+import { useNavigation, CommonActions } from '@react-navigation/native';
 
 
-const SplashScreen = ({navigation})=> {
+const SplashScreen = () => {
+  const navigation = useNavigation();
 
-    useEffect(() => {
-
-      setTimeout(() => {
-        navigation.navigate('', { screen: 'Login' });  //navigation.navigate('Login');
-      }, 3000);
-
-      start();
-
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.dispatch(
+        CommonActions.reset({
+          'index': 1,
+          'routes': [{ 'name': 'Login' }],
+        }),
+      );
+    }, 4000);
     }, []);
+
 
 
     return (
@@ -33,7 +38,7 @@ const SplashScreen = ({navigation})=> {
             </View>
       </View>
     </>
-    );
+  );
   };
 
   const styles = StyleSheet.create({
@@ -44,7 +49,7 @@ const SplashScreen = ({navigation})=> {
       backgroundColor:'#CED8F6',
     },
     text:{
-      fontSize: 40,
+      fontSize: 30,
       color:'#084B8A',
       fontFamily:'tahoma',
       fontWeight:'bold',

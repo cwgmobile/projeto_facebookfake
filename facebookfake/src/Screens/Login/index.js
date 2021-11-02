@@ -4,12 +4,11 @@
 /* eslint-disable prettier/prettier */
 import 'react-native-gesture-handler';
 import React,{useContext, useState} from 'react';
-import {Text, View, SafeAreaView, Dimensions, TouchableOpacity } from 'react-native';
+import {Text, TextInput, View, SafeAreaView, Dimensions, Pressable, Alert } from 'react-native';
 import axios from 'axios';
 import AuthContext from '../../contexts/auth';
 import Lottie from 'lottie-react-native';
 import logoFace from '../../assets/logoFAce.json';
-import { Input } from "react-native-elements";
 import styles from './styles';
 
 const size = Dimensions.get('window').width * 0.4;
@@ -37,33 +36,32 @@ const entrar = () => {
   };
 
 return (
-        <>
+      <>
         <SafeAreaView style={styles.container}>
                 <Lottie autoSize source={logoFace} style={{width: size, height: size}}
                     autoPlay loop resizeMode = 'contain' />
-            </SafeAreaView>
+        </SafeAreaView>
                 <View style={styles.input}>
-                    <Input
+                    <TextInput
                          value={email}
-                         onChangeText={v => setEmail('eve.holt@reqres.in')}
+                         onChangeText={v => setEmail(v)}
                          keyboardType="email-address"
-
                          />
                 </View>
                 <View style={styles.input}>
-                    <Input
+                    <TextInput
                         value={senha}
-                        onChangeText={v => setSenha('cityslika')}
+                        onChangeText={v => setSenha(v)}
                         secureTextEntry
 
                     />
                 </View>
                 <View style={styles.button}>
-                    <TouchableOpacity onPress={() => entrar()}>
-                        <Text style = {{color:'#fff'}} >ENTRAR </Text>
-                    </TouchableOpacity>
-                </View>
-            </>
+                    <Pressable onPress={() => entrar()}>
+                        <Text style = {{color:'#fff', fontWeight:'bold'}} >ENTRAR </Text>
+                  </Pressable>
+            </View>
+          </>
           );
       };
 

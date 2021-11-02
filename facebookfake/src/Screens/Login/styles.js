@@ -6,15 +6,21 @@ export default StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 80,
     marginBottom: 50,
     marginHorizontal: 20,
 
   },
   input: {
-    justifyContent: 'center',
+
     alignItems: 'center',
-    paddingHorizontal: 20,
+    justifyContent: 'center',
+    backgroundColor:'#E0ECF8',
+    border: 1,
+    borderRadius: 10,
+    borderColor: '#BDBDBD',
+    marginVertical: 10,
+    marginHorizontal: 20,
 
   },
   button:{

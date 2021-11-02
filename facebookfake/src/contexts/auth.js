@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 /**
  * Criação do contexto com valor pré-definido
  */
-const AuthContext = createContext({signed: true});
+ const AuthContext = createContext({signed: true});
 
 /**
  * Criação do Provider para ser utilizado em toda a aplicação
@@ -15,7 +15,7 @@ const AuthContext = createContext({signed: true});
  * que está declarado no App.js
  */
 export const AuthProvider = ({children}) => {
-  const [signed, setSigned] = useState(false);
+  const [signed, setSigned] = useState(true);
 
   /**
    * Constantemente esse useEffect é chamado para
@@ -23,6 +23,7 @@ export const AuthProvider = ({children}) => {
    * Caso exista ele altera o status do usuário
    * para logado.
    */
+
   useEffect(() => {
     async function loadStorageData() {
       const storagedToken = await AsyncStorage.getItem('token');
@@ -44,7 +45,7 @@ export const AuthProvider = ({children}) => {
    * para true e o AsyncStorage recebe o
    * registro do token.
    */
-  const signIn = dadosRetorno => {
+   const signIn = dadosRetorno => {
     setSigned(true);
     AsyncStorage.setItem('token', dadosRetorno);
   };
@@ -64,7 +65,7 @@ export const AuthProvider = ({children}) => {
    * o usuário será navegado para a
    * tela de login.
    */
-  const signOut = async () => {
+   const signOut = async () => {
     await AsyncStorage.clear();
     setSigned(false);
   };
@@ -77,7 +78,7 @@ export const AuthProvider = ({children}) => {
    * signIn: function(string)
    * signOut: function()
    */
-  return (
+   return (
     <AuthContext.Provider
       value={{
         signed,
