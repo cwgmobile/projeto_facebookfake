@@ -17,5 +17,4 @@ export default StyleSheet.create({
     marginBottom: 5,
     color: '#555555',
   },
-
 });

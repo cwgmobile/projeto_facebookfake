@@ -1,29 +1,17 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-trailing-spaces */
 /* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import React, {useContext} from 'react';
-import {View, Pressable, Text} from 'react-native';
+import {View, Text, Pressable} from 'react-native';
 import styles from './styles';
-import {AuthContext} from '../../contexts/auth';
+import AuthContext from '../../contexts/auth';
 
-
-const Home = ({navigation}) => {
+const Home = () => {
   const {signOut} = useContext(AuthContext);
   return (
-
     <View style={styles.pageHome}>
-        <View>
-              <Pressable
-                style={{
-                  backgroundColor: 'lightblue',
-                  width: 150,
-                  height: 30,
-                  margin: 30,
-                }}
-                onPress={() => signOut()}>
-                <Text>Deslogar</Text>
-              </Pressable>
-        </View>
+      <Pressable style={styles.button} onPress={() => signOut()}>
+        <Text style={styles.textButton}>Deslogar</Text>
+      </Pressable>
     </View>
   );
 };

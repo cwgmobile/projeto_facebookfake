@@ -1,9 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { StyleSheet } from 'react-native';
-
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -13,7 +11,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    backgroundColor:'#0f69ad',
+    backgroundColor: '#0f69ad',
   },
   capture: {
     flex: 0,
@@ -54,38 +52,35 @@ export default StyleSheet.create({
     marginTop: 25,
   },
   containerPerfil: {
-    flex:1,
-    alignItems:'center',
-    backgroundColor:'#0f69ad',
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#0f69ad',
     borderRadius: 25,
-    margin:15,
-
+    margin: 15,
   },
-  textPerfil:{
+  textPerfil: {
     fontSize: 20,
-    fontWeight:'bold',
-    color:'#fff',
+    fontWeight: 'bold',
+    color: '#fff',
     marginTop: 15,
   },
-  textDescription:{
-    marginVertical:15,
+  textDescription: {
+    marginVertical: 15,
     marginHorizontal: 15,
     fontSize: 15,
-    color:'#fff',
+    color: '#fff',
     alignItems: 'center',
-
   },
-  containerButton:{
-   marginBottom:30,
+  containerButton: {
+    marginBottom: 30,
   },
   buttonRedes: {
-   backgroundColor:'#fff',
-   paddingHorizontal: 130,
-   paddingVertical: 10,
-   borderRadius: 5,
-   marginVertical:5,
-   alignItems:'center',
-   justifyContent:'center',
-
+    backgroundColor: '#fff',
+    paddingHorizontal: 130,
+    paddingVertical: 10,
+    borderRadius: 5,
+    marginVertical: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
