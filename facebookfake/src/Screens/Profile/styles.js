@@ -57,6 +57,7 @@ export default StyleSheet.create({
     backgroundColor: '#0f69ad',
     borderRadius: 25,
     margin: 15,
+    marginBottom: 50,
   },
   textPerfil: {
     fontSize: 20,

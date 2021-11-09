@@ -1,6 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React, {useContext} from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { Pressable, Text, View } from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import StackRoutes from './stackRoutes';
 import Posts from '../Screens/Posts';
 import Profile from '../Screens/Profile';
 import Blog from '../Screens/Blog';
@@ -8,28 +11,116 @@ import PostList from '../Screens/PostList';
 import PostsDetails from '../Screens/PostsDetails';
 import AuthRoutes from './authroutes';
 import AuthContext from '../contexts/auth';
-import Home from '../Screens/Home';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const Routes = () => {
   const {signed} = useContext(AuthContext);
+
   if (!signed) {
     return <AuthRoutes />;
   } else {
     return (
-      <Stack.Navigator
-        initialRouteName="SplashScreen"
-        screenOptions={{headerShown: false}}
-        >
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Blog" component={Blog} />
-        <Stack.Screen name="Posts" component={Posts} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="PostList" component={PostList} />
-        <Stack.Screen name="PostDetails" component={PostsDetails} />
-      </Stack.Navigator>
+      <Drawer.Navigator
+        screenOptions={{
+          headerShown: false,
+
+          drawerStyle: {
+            backgroundColor: '#CED8F6',
+            paddingTop: 40,
+          },
+          drawerActiveBackgroundColor: '#0f69ad',
+          drawerActiveTintColor: '#fff',
+          drawerInactiveTintColor: '#0f69ad',
+        }}
+        initialRouteName="HomeDrawer">
+        <Drawer.Screen
+          name="HomeDrawer"
+          component={StackRoutes}
+          options={{
+            title: 'Home',
+            drawerIcon: ({focused, size, color}) => (
+              <Icon
+                name={focused ? 'home' : 'home'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="Blog"
+          component={Blog}
+          options={{
+            title: 'Blog',
+            drawerIcon: ({focused, size, color}) => (
+              <Icon
+                name={focused ? 'post-add' : 'post-add'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="Posts"
+          component={Posts}
+          options={{
+            title: 'Posts',
+            drawerIcon: ({focused, size, color}) => (
+              <Icon
+                name={focused ? 'rss-feed' : 'rss-feed'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            title: 'Perfil',
+            drawerIcon: ({focused, size, color}) => (
+              <Icon
+                name={focused ? 'person' : 'person'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="PostList"
+          component={PostList}
+          options={{
+            title: 'Lista de Posts',
+            drawerIcon: ({focused, size, color}) => (
+              <Icon
+                name={focused ? 'list' : 'list'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="PostsDetails"
+          component={PostsDetails}
+          options={{
+            title: 'Detalhes',
+            drawerIcon: ({focused, size, color}) => (
+              <Icon
+                name={focused ? 'info' : 'info'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+      </Drawer.Navigator>
     );
   }
 };
+
 export default Routes;

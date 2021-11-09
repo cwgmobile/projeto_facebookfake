@@ -3,7 +3,7 @@ import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import styles from './styles';
 
-const PostDetails = ({route}) => {
+const PostsDetails = ({route}) => {
   return (
     <ScrollView style={styles.container}>
       <View>
@@ -16,4 +16,4 @@ const PostDetails = ({route}) => {
   );
 };
 
-export default PostDetails;
+export default PostsDetails;

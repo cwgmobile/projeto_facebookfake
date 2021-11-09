@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React, {useContext} from 'react';
 import {View, Text, Pressable} from 'react-native';

@@ -12,7 +12,9 @@ const SplashScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       if (signed) {
-        navigation.navigate('Home');
+        navigation.navigate('HomeDrawer');
+      } else {
+        navigation.navigate('Login');
       }
     }, 4000);
   // eslint-disable-next-line react-hooks/exhaustive-deps
