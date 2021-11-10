@@ -54,16 +54,18 @@ export default StyleSheet.create({
   containerPerfil: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#0f69ad',
-    borderRadius: 25,
+    borderRadius: 10,
     margin: 15,
+    marginTop: 50,
     marginBottom: 50,
   },
   textPerfil: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#fff',
-    marginTop: 15,
+    marginTop: 60,
   },
   textDescription: {
     marginVertical: 15,
@@ -73,7 +75,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   containerButton: {
-    marginBottom: 30,
+    marginBottom: 20,
   },
   buttonRedes: {
     backgroundColor: '#fff',
@@ -81,6 +83,8 @@ export default StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 5,
     marginVertical: 5,
+    fontSize: 20,
+    fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -8,15 +8,19 @@ const styles = StyleSheet.create({
   },
   card: {
     borderWidth: 1,
-    borderColor: '#555555',
+    borderColor: '#fff',
     padding: 10,
     marginVertical: 10,
+    backgroundColor: '#0f69ad',
+    borderRadius: 10,
   },
   title: {
+    color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
   },
   description: {
+    color: '#fff',
     fontSize: 14,
     lineHeight: 18,
   },
