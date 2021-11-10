@@ -117,7 +117,6 @@ const Home = () => {
                     fontWeight: 'bold',
                     marginLeft: 10,
                     marginVertical: 20,
-                    justifyContent: 'space-between',
                   }}>
                   TECNOLOGIAS MOBILE
                 </Text>
@@ -137,12 +136,12 @@ const Home = () => {
                   }}
                 />
               </View>
-              <View style={styles.moreInfo}>
+              <View style={styles.codeInfo}>
                 <View style={{marginTop: 10}}>
-                  <Text style={styles.movieTitle}>
+                  <Text style={styles.codeTitle}>
                     {lista[activeIndex].title}
                   </Text>
-                  <Text style={styles.movieDesc}>
+                  <Text style={styles.codeDesc}>
                     {lista[activeIndex].text}
                   </Text>
                   <Icon

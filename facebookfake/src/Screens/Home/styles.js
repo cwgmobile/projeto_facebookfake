@@ -52,7 +52,7 @@ export default StyleSheet.create({
     top: 15,
     right: 15,
   },
-  moreInfo: {
+  codeInfo: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -64,7 +64,7 @@ export default StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  movieTitle: {
+  codeTitle: {
     paddingLeft: 20,
     fontSize: 24,
     fontWeight: 'bold',
@@ -72,7 +72,7 @@ export default StyleSheet.create({
     marginBottom: 5,
     flexDirection: 'row',
   },
-  movieDesc: {
+  codeDesc: {
     paddingLeft: 20,
     paddingRight: 20,
     color: '#585858',
