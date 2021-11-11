@@ -15,7 +15,7 @@ export default StyleSheet.create({
     height: null,
     opacity: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#000',
+    backgroundColor: '#CED8F6',
   },
   icon: {
     position: 'absolute',

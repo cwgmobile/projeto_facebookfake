@@ -18,8 +18,15 @@ const StackRoutes = () => {
     return <AuthRoutes />;
   } else {
     return (
-      <Stack.Navigator initialRouteName="Home" >
-        <Stack.Screen name="Home" component={Home} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+         name="Home"
+         component={Home}/*
+         options={{
+          headerShown: false,
+         }}*/
+
+         />
         <Stack.Screen name="Blog" component={Blog} />
         <Stack.Screen name="Posts" component={Posts} />
         <Stack.Screen name="Profile" component={Profile} />

@@ -16,6 +16,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Carousel from 'react-native-snap-carousel';
 import styles from './styles';
 import AuthContext from '../../contexts/auth';
+import {Header} from 'react-native/Libraries/NewAppScreen';
+//import Header from '../../components/Header';
 
 const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
@@ -92,7 +94,7 @@ const Home = () => {
       <ScrollView style={styles.container}>
         <View style={{flex: 1, height: screenHeight}}>
           <View
-            style={{...StyleSheet.absoluteFill, backgroundColor:'#0f69ad'}}>
+            style={{...StyleSheet.absoluteFill, backgroundColor: '#0f69ad'}}>
             <ImageBackground
               source={{uri: background}}
               style={styles.imgBg}
@@ -129,9 +131,7 @@ const Home = () => {
                   <Text style={styles.codeTitle}>
                     {lista[activeIndex].title}
                   </Text>
-                  <Text style={styles.codeDesc}>
-                    {lista[activeIndex].text}
-                  </Text>
+                  <Text style={styles.codeDesc}>{lista[activeIndex].text}</Text>
                   <Icon
                     style={styles.iconLogout}
                     name={'logout'}
