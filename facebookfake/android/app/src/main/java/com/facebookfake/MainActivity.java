@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
     return "facebookfake";
   }
     /*-- Add aqui tbm para funcionamento -- */
-   @Override
+  @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);
   }
