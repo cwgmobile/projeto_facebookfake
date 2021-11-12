@@ -6,6 +6,7 @@ const {width} = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     padding: 15,
+    backgroundColor: '#fff',
   },
   header: {
     justifyContent: 'flex-start',
@@ -25,14 +26,16 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#222222',
+    color: '#1877f2',
   },
   iconTime: {
     marginRight: 40,
+    color: '#1877f2',
   },
   time: {
     fontSize: 14,
-    color: '#555555',
+    fontWeight: 'bold',
+    color: '#141414',
   },
   text: {
     fontSize: 16,
@@ -43,12 +46,12 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#555555',
+    color: '#1877f2',
     flexDirection:'row',
   },
   likesCount: {
     fontSize: 14,
-    color: '#555555',
+    color: '#1877f2',
     marginVertical: 15,
   },
   buttonRow: {
@@ -60,7 +63,8 @@ const styles = StyleSheet.create({
   line: {
     width: '100%',
     height: 1,
-    backgroundColor: '#D8D8D8',
+    backgroundColor: '#1877f2',
+    marginBottom: 5,
   },
   buttonFooter: {
     width: 100,

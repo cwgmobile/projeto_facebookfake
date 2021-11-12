@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, {useEffect, useState} from 'react';
 import {View, Text, ScrollView, ActivityIndicator} from 'react-native';
+import Header from '../../components/Header';
 import axios from 'axios';
 import styles from './styles';
 
@@ -23,6 +24,8 @@ const Blog = () => {
   };
 
   return (
+    <>
+    <Header title="Blog"/>
     <ScrollView style={styles.container}>
       {dados.length > 0 ? (
         <>
@@ -39,6 +42,7 @@ const Blog = () => {
         <ActivityIndicator size={40} color="#4267B2" />
       )}
     </ScrollView>
+    </>
   );
 };
 

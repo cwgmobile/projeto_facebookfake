@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import ButtonFooter from '../../components/ButtonFooter';
 import Comments from '../../components/Comments';
 import styles from './styles';
+import Header from '../../components/Header';
 
 const Posts = () => {
   const [liked, setLiked] = useState(false);
@@ -23,6 +24,8 @@ const decrement = ()=> {
 };
 
   return (
+    <>
+    <Header title="Posts"/>
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
@@ -61,6 +64,7 @@ const decrement = ()=> {
 
     {openComments && <Comments onClose={() => setOpenComments(false)} />}
   </ScrollView>
+  </>
   );
 };
 export default Posts;

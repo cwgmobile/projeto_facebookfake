@@ -2,6 +2,10 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  totalContainer:{
+    flex:1,
+    backgroundColor:'#fff',
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -11,7 +15,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    backgroundColor: '#0f69ad',
+    backgroundColor: '#1877f2',
   },
   capture: {
     flex: 0,
@@ -49,26 +53,27 @@ export default StyleSheet.create({
   },
   profileContainer: {
     alignSelf: 'center',
-    marginTop: 25,
+    marginTop: 30,
   },
   containerPerfil: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#0f69ad',
+    backgroundColor: '#1877f2',
     borderRadius: 10,
     margin: 15,
     marginTop: 50,
-    marginBottom: 50,
+    marginBottom:50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   textPerfil: {
+    alignItems: 'center',
     fontSize: 20,
     fontWeight: 'bold',
     color: '#fff',
-    marginTop: 60,
+    marginTop: 30,
   },
   textDescription: {
-    marginVertical: 15,
+    marginVertical: 10,
     marginHorizontal: 15,
     fontSize: 15,
     color: '#fff',
@@ -79,7 +84,7 @@ export default StyleSheet.create({
   },
   buttonRedes: {
     backgroundColor: '#fff',
-    paddingHorizontal: 130,
+    paddingHorizontal: 120,
     paddingVertical: 10,
     borderRadius: 5,
     marginVertical: 5,

@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 import React, {useContext} from 'react';
-import { Pressable, Text, View } from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import StackRoutes from './stackRoutes';
@@ -26,12 +25,12 @@ const Routes = () => {
           headerShown: false,
 
           drawerStyle: {
-            backgroundColor: '#CED8F6',
+            backgroundColor: '#f0f2f5',
             paddingTop: 40,
           },
-          drawerActiveBackgroundColor: '#0f69ad',
+          drawerActiveBackgroundColor: '#1877f2',
           drawerActiveTintColor: '#fff',
-          drawerInactiveTintColor: '#0f69ad',
+          drawerInactiveTintColor: '#1877f2',
         }}
         initialRouteName="HomeDrawer">
         <Drawer.Screen

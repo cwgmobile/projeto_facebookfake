@@ -5,13 +5,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
+    backgroundColor: '#fff',
   },
   card: {
     borderWidth: 1,
     borderColor: '#fff',
     padding: 10,
     marginVertical: 10,
-    backgroundColor: '#0f69ad',
+    backgroundColor: '#1877f2',
     borderRadius: 10,
   },
   title: {

@@ -5,12 +5,13 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: '#fff',
   },
   title: {
     fontWeight: 'bold',
     fontSize: 40,
     lineHeight: 44,
-    color: '#4267B2',
+    color: '#1877f2',
   },
   author: {
     fontSize: 14,
@@ -24,7 +25,7 @@ export default StyleSheet.create({
     textAlign: 'justify',
   },
   border: {
-    backgroundColor: '#4267B2',
+    backgroundColor: '#1877f2',
     height: 1,
     width: '100%',
     marginVertical: 30,

@@ -2,12 +2,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useRef, useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import Header from '../../components/Header';
+import {View, Text, TouchableOpacity, Image, SafeAreaView, ScrollView} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from './styles';
@@ -19,7 +15,6 @@ const Profile = () => {
 
   useEffect(() => {
     AsyncStorage.getItem('foto_perfil').then(img => {
-
       if (img) {
         setNewImage(img);
       }
@@ -50,8 +45,9 @@ const Profile = () => {
   };
 
   return (
-  <>
-
+  <SafeAreaView style={styles.totalContainer}>
+    <Header title="Perfil" />
+    <>
       {showCamera ? (
         <View style={styles.container}>
           <RNCamera
@@ -90,11 +86,14 @@ const Profile = () => {
           )}
           {newImage !== '' && (
             <TouchableOpacity onPress={() => removePhoto()}>
-              <Icon name="trash" color="red" size={30} />
+              <Icon name="trash" color="#FA5858" size={30} />
             </TouchableOpacity>
           )}
         </View>
       )}
+    </>
+    <>
+      <ScrollView>
       <View style={styles.containerPerfil}>
         <Text style={styles.textPerfil}>Charles Godoy</Text>
         <Text style={styles.textDescription}>
@@ -115,9 +114,11 @@ const Profile = () => {
             <Text style={{color: '#0f69ad'}}>Site Portfólio </Text>
           </TouchableOpacity>
         </View>
-      </View>
+        </View>
+      </ScrollView>
+    </>
 
-  </>
+  </SafeAreaView>
   );
 };
 

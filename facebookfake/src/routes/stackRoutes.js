@@ -21,10 +21,10 @@ const StackRoutes = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
          name="Home"
-         component={Home}/*
+         component={Home}
          options={{
           headerShown: false,
-         }}*/
+         }}
 
          />
         <Stack.Screen name="Blog" component={Blog} />

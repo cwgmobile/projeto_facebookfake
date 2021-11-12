@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, {useEffect, useState} from 'react'; // Linha alterada
 import {ScrollView, View, Text, Pressable} from 'react-native';
+import Header from '../../components/Header';
 import axios from 'axios';
 import styles from './styles';
 
@@ -25,6 +26,8 @@ const PostList = ({navigation}) => {
 
   // Listagem dos posts alterada
   return (
+    <>
+    <Header title="Lista de Posts"/>
     <ScrollView style={styles.container}>
       {dados.map((item, index) => (
         <View key={index.toString()} style={styles.card}>
@@ -36,6 +39,7 @@ const PostList = ({navigation}) => {
         </View>
       ))}
     </ScrollView>
+    </>
   );
 };
 
